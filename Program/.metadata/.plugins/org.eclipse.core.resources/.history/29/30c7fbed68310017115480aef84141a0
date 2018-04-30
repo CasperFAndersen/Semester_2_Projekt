@@ -1,0 +1,5 @@
+package databse;
+
+public interface OrderConditionDBIF {
+
+}

@@ -1,0 +1,5 @@
+DATABASER:
+Host: kraka.ucn.dk
+ 
+Username is the same as the databasename (eg. dmaa0916_000000)
+All passwords are: Password1!

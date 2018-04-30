@@ -1,0 +1,6 @@
+package database;
+
+public interface CustomerDBIF {
+	List<Customer> findAll();
+	Customer findById(int id);
+}

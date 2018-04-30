@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>130</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+CreateProductView</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>160</y>
+      <w>480</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1. List&lt;ProductType&gt; findAllProductTypes()
+2. List&lt;Supplier&gt; findAllSuppliers()
+3. List&lt;Product&gt; findAllCustomizableProducts()
+4.1 templProd = findTemplateById(pt.getTemplate.getid)
+5.1 setPropertyValue(prop, value)
+6.1 id = createProduct(templProd, pt,  model, description,               
+		                           supllier, dimension, salesPrice, purchasePrice, fromDate)
+7. [pt.type = "Module"] insertPartOfProduct(id, getCustomizableProduct());
+</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>380</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ProductCtrl
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>460</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ProductDB</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>380</y>
+      <w>360</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.1 List&lt;ProductType&gt; findAllProductTypes()
+3.1 List&lt;Product&gt;findAllCustomizableProducts()
+4.2 templProd = findTemplateById(templId)
+6.4 id =insertProductToDatabase(p,pt)
+7.1 insertPartOfProduct(id, custProdId)</panel_attributes>
+    <additional_attributes>340.0;80.0;340.0;20.0;10.0;20.0;340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>570</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Product</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>460</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>PersonDB</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>610</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ProductPrice</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>380</y>
+      <w>350</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1 List&lt;Supplier&gt; findAllSuppliers()</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;330.0;20.0;10.0;20.0;330.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>90</y>
+      <w>400</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+4. pt = getSelectedProductType()
+5. prop =tableModel.getSelectedElement()
+6. supllier = getSelectedSupplier()</panel_attributes>
+    <additional_attributes>70.0;70.0;120.0;70.0;120.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>480</y>
+      <w>240</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.2*[i..*] createProductType()
+3.2*[i..*] createProduct()
+4.3 templProd = createProduct()
+4.6 setProperties(List&lt;Properties&gt;)</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>570</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Supplier</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>480</y>
+      <w>180</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.2 *[i..*] createSupplier()</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>400</y>
+      <w>430</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+
+
+
+
+6.2 pp =createProductPrice(salesPrice, purchasePice, fromDate)</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;30.0;10.0;170.0;10.0;30.0;130.0;30.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>400</y>
+      <w>350</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+6.3 setProductPrice(pp)
+6.5 List&lt;Property&gt;getProperties()</panel_attributes>
+    <additional_attributes>330.0;190.0;290.0;190.0;290.0;100.0;10.0;100.0;290.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>470</y>
+      <w>320</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+4.4 List&lt;Property&gt; findPropertiesById(id)</panel_attributes>
+    <additional_attributes>10.0;180.0;300.0;180.0;20.0;180.0;300.0;180.0;300.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>640</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>PropertyDB</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>720</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Property</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>660</y>
+      <w>190</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+4.5 *[i..*] createProperty()</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>400</y>
+      <w>260</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+6.6 *[i..*]insertProperty(prop, id)</panel_attributes>
+    <additional_attributes>240.0;260.0;10.0;260.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>650</y>
+      <w>260</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+5.2 setValue(value)</panel_attributes>
+    <additional_attributes>240.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>360</x>
+      <y>140</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+List of templProd's
+unique properties are
+displayed in a JTable
+and found by getProperties()</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

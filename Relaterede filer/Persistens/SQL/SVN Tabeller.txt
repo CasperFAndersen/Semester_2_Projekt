@@ -1,0 +1,57 @@
+create table invoice(
+	id int primary key,
+	payment_date date,
+	order_id int foreing key refrences sales_order(id) on update cascade on delete, cascade
+)
+
+create table Order_Condition(
+	id int primary key,
+)
+
+create table offer(
+	id int foreing key refrences order_condition(id) on update cascade on delete,
+	create_date date,
+	discount int,
+	sent_Date date,
+	due_date date,
+	accept_date date
+)
+
+create table order(
+	id int foreing key refrences order_condition(id) on update cascade on delete,
+	create_date date,
+	pack_date date
+)
+
+create table delivered(
+	id int foreing key refrences sales_order(id) on update cascade on delete,
+	delivery_date date
+)
+
+create table product(
+	id int primary key,
+	name varchar(20),
+	purchase_price int,
+	sales_price int,
+	country_of_Origin varchar (40),
+	min_stock int,
+	amount int
+)
+
+create table clothing(
+	prod_id int foreing key refrences product(id) on update cascade on delete
+	size int,
+	colour varchar(20)
+)
+
+create table equipment(
+	prod_id int foreing key refrences product(id) on update cascade on delete
+	type varchar(20),
+	discription varchar(40)
+)
+
+create table Gun_replica(
+	prod_id int foreing key refrences product(id) on update cascade on delete
+	caliber varchar(20)
+	material varchar (40)
+)

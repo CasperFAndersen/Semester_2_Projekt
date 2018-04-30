@@ -1,0 +1,12 @@
+package model;
+
+public class Discount {
+	private double clubDiscountLimit;
+	private double privateDiscountLimit;
+	private double clubDiscountAmount;
+	private double privateDiscountAmount;
+	
+	public Discount() { 
+		
+	}
+}

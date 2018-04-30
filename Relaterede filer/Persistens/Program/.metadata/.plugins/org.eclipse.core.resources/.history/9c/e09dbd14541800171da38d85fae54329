@@ -1,0 +1,11 @@
+package model;
+
+public class Customer {
+	private String type;
+	
+	public Customer(String name, String address, String zip, String city, String phone, String type) {
+		super(name, address, zip, city, phone);
+		setType(type);
+	}
+
+}

@@ -1,0 +1,143 @@
+package mockups;
+
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ * SmartOrder
+ * filename.java
+ * Purpose: 
+ * @author Gruppe 1
+ * @version 1.0 
+ */
+public class MakeProductPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField txtFindModel;
+	private JTable modulTbl;
+	private JTextField txtDescription;
+	private JTextField txtModel;
+	private JTextField txtSupplier;
+	private JTextField txtCategory;
+
+	/**
+	 * Create the panel.
+	 */
+	public MakeProductPanel() {
+		setLayout(null);
+		
+		JLabel lblModuleType = new JLabel("Modultype");
+		lblModuleType.setBounds(54, 174, 103, 16);
+		add(lblModuleType);
+		
+		txtFindModel = new JTextField();
+		txtFindModel.setFont(new Font("Tahoma", Font.ITALIC, 13));
+		txtFindModel.setText("S\u00F8g model");
+		txtFindModel.setBounds(65, 30, 394, 30);
+		add(txtFindModel);
+		txtFindModel.setColumns(10);
+		
+		JLabel lblModel = new JLabel("Model:");
+		lblModel.setBounds(65, 89, 56, 16);
+		add(lblModel);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(54, 203, 264, 167);
+		add(scrollPane);
+		
+		modulTbl = new JTable();
+		modulTbl.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+				{null, null},
+			},
+			new String[] {
+				"Modulnavn", "Beskrivelse"
+			}
+		));
+		scrollPane.setViewportView(modulTbl);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(54, 170, 135, 25);
+		add(comboBox);
+		
+		JScrollPane selectedModulesScrollPane = new JScrollPane();
+		selectedModulesScrollPane.setBounds(475, 203, 264, 166);
+		add(selectedModulesScrollPane);
+		
+		JList list = new JList();
+		selectedModulesScrollPane.setViewportView(list);
+		
+		JLabel lblSelectedModules = new JLabel("Valgte moduler:");
+		lblSelectedModules.setBounds(475, 174, 162, 16);
+		add(lblSelectedModules);
+		
+		JButton btnAddModuleToProduct = new JButton("Tilf\u00F8j ->");
+		btnAddModuleToProduct.setBackground(new Color(60, 179, 113));
+		btnAddModuleToProduct.setBounds(350, 241, 87, 25);
+		add(btnAddModuleToProduct);
+		
+		JLabel lblSupplier = new JLabel("Leverand\u00F8r:");
+		lblSupplier.setBounds(65, 125, 79, 16);
+		add(lblSupplier);
+		
+		JLabel lblDescription = new JLabel("Beskrivelse:");
+		lblDescription.setBounds(321, 73, 87, 16);
+		add(lblDescription);
+		
+		JLabel lblCategory = new JLabel("Kategori:");
+		lblCategory.setBounds(480, 89, 56, 16);
+		add(lblCategory);
+		
+		txtDescription = new JTextField();
+		txtDescription.setBounds(321, 89, 138, 56);
+		add(txtDescription);
+		txtDescription.setColumns(10);
+		
+		txtModel = new JTextField();
+		txtModel.setBounds(148, 86, 116, 22);
+		add(txtModel);
+		txtModel.setColumns(10);
+		
+		txtSupplier = new JTextField();
+		txtSupplier.setBounds(148, 122, 116, 22);
+		add(txtSupplier);
+		txtSupplier.setColumns(10);
+		
+		txtCategory = new JTextField();
+		txtCategory.setBounds(548, 86, 191, 22);
+		add(txtCategory);
+		txtCategory.setColumns(10);
+		
+		JButton btnRemove = new JButton("<- Fjern");
+		btnRemove.setBackground(new Color(255, 99, 71));
+		btnRemove.setBounds(350, 304, 87, 25);
+		add(btnRemove);
+		
+		JButton btnAddProduct = new JButton("Tilføj produkt til ordre");
+		btnAddProduct.setBackground(Color.ORANGE);
+		btnAddProduct.setBounds(594, 383, 145, 25);
+		add(btnAddProduct);
+
+	}
+}

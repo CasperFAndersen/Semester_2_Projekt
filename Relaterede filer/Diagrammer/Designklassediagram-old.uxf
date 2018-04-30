@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>20</y>
+      <w>55</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>SalesOrderView
+--
+-init(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>225</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>SalesOrderCtrl
+--
+-personCtrl : PersonCtrlIF
+-productCtrl : ProductCtrlIF
+-salesOrder: SalesOrderIF
+-salesOrderDB: SalesOrderDBIF
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>265</x>
+      <y>165</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PersonCtrlIF
+--
+--
++createCustomer(id: int, name: String, address: String, 
+    phone: String, email: String, type: String): Customer
++findCustomerByPhone(phone: String): Customer
++findEmployeeByUsernameAndPassword(username: String, 
+    password: String): Employee
++findAllCustomers(): ArrayList&lt;Customer&gt;
++findCustomerByPhone(phone: String) : Customer
++findEmployeeByUsernameAndPassword(username: String, 
+    password: String): Employee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>95</y>
+      <w>190</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+SalesOrderCtrlIF
+--
++createSalesOrder() : void
++setSalesOrderCondition(orderCondition: OrderCondition): OrderCondition
++findAllProducts(): ArrayList&lt;Product&gt;
++findAllCustomers(): ArrayList&lt;Customer&gt;
++setCustomer(phone: String) : void
++findAllCustomizableProducts(): ArrayList&lt;Product&gt;
++findAllNonCustomizableProducts(): ArrayList&lt;Product&gt;
++saveAsOffer(dueDate: LocalDate): void
++addSalesOrderLineToSalesOrder(product: Product, amount: int) : void
++setDiscountToSalesOrderLine(salesOrderLine: SalesOrderLine, discountAmount: String): void
++closeSalesOrder() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>565</x>
+      <y>205</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>230</y>
+      <w>70</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>270</y>
+      <w>15</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>730</y>
+      <w>210</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>SalesOrder
+--
+-id: int
+-datePlaced: LocalDate
+-paid: boolean
+-orderSent: boolean
+-salesOrderLines : ArrayList&lt;SalesOrderLine&gt;
+-orderCondition : OrderCondition
+- totalPrice: double
+- customer : Customer
+- employee : Employee
+--
++&lt;&lt;constructor&gt;&gt;
+    SalesOrder()
++getId(): int
++setId(id: int): void
++getDatePlaced(): LocalDate
++setDatePlaced(datePlaced: LocalDate): void
++isPaid(): boolean
++setPaid(paid: boolean): void
++isOrderSent(): boolean
++setOrderSent(orderSent: boolean): void
++getTotalPrice(): double
++setTotalPrice(): void
++getCustomer: Customer
++addCustomerToSalesOrder(customer: Customer): void
++getEmployee(): Employee
++addEmployeeToSaleOrder(employee: Employee): void
++getSalesOrderLines(): ArrayList&lt;SalesOrderLine&gt;
++addSalesOrderLineToSalesOrder(product: Product, amount: int): void
++getOrderCondition(): OrderCondition
++setOrderCondition(orderCondition: OrderCondition): void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>705</x>
+      <y>1040</y>
+      <w>155</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>SalesOrderLine
+--
+id: int
+amount: int
+product: Product
+discountByInput: DiscountIF
+discount: double
+subTotal: double
+--
++&lt;&lt;constructor&gt;&gt;
+    SalesOrderLine(product: Product, amount: int)
++getId(): int
++setId(id: int): void
++getProductPrie(): double
++getAmount(): int
++setAmount(amount: int): void
++getProduct(): Product
++setProduct(product: Product): void
++getDiscount(): double
++setDiscount(discount: double): void
++getDiscountIF(): DiscountIF
++setDiscount(discountAmount: Sting): void
++getSubTotal(): double
++setSubTotal(price: double): double
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>625</x>
+      <y>975</y>
+      <w>90</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;160.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>1000</y>
+      <w>60</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/OrderCondition/
+--
+-id: int
+--
++&lt;&lt;constructor&gt;&gt;
+	OrderCondtion()
++getId(): int
++setId(id: int): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>1105</y>
+      <w>175</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>OfferType
+--
+-createDate : LocalDate
+-dueDate : LocalDate
+-acceptDate : LocalDate
+--
++&lt;&lt;constructor&gt;&gt;
+    OfferType(createDate: LocalDate, discount: double,
+    dueDate: LocalDate, acceptDate: LocalDate)
++getCreateDate(): LocalDate
++setCreateDate(createDate: LocalDate): void
++getDueDate(): LocalDate
++setDueDate(dueDate: LocalDate): void
++getAcceptDate(): LocalDate
++setAcceptDate(acceptDate: LocalDate): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>425</x>
+      <y>1130</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>OrderType
+--
+-packDate : LocalDate
+-createDate : LocalDate
+--
++&lt;&lt;constructor&gt;&gt;
+    OrderType(packDate: LocalDate, 
+                     createDate: LocalDate)
++getPackDate(): LocalDate
++setPackDate(packDate: LocalDate): void
++getCreateDate(): LocalDate
++setCreateDate(createDate: LocalDate): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>585</x>
+      <y>1130</y>
+      <w>115</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>DeliveredType
+--
+-date : LocalDate
+--
++&lt;&lt;constructor&gt;&gt;
+    DeliveredType(date: LocalDate)
++getDate(): LocalDate
++setDate(date: LocalDate): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>545</x>
+      <y>1045</y>
+      <w>80</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>1045</y>
+      <w>15</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>1045</y>
+      <w>110</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>975</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>265</x>
+      <y>270</y>
+      <w>110</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PersonCtrl
+--
+-personDB : PersonDBIF
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>95</x>
+      <y>290</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>100</x>
+      <y>0</y>
+      <w>1350</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>gui</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>100</x>
+      <y>75</y>
+      <w>1350</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>345</y>
+      <w>195</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>PersonDBIF
+--
++insertCustomer(customer: Customer): void
++findAllCustomers(): List&lt;Customer&gt;
++findCustomerByPhone(phone: String): Customer
++findCustomerById(id: int): Customer
++updateCustomerByPhone(name: String, address: String, 
+     zipCode: String, city: String, currPhone: String, 
+     newPhone: String, email: String, personType: String, 
+      type: String): void
++removeCustomerByPhone(phone: String): void
++findEmployeeByUsernameAndPassword(Username: String, 
+    password: String): Employee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>250</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>100</x>
+      <y>325</y>
+      <w>1350</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>database</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>300</y>
+      <w>15</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>445</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>100</x>
+      <y>650</y>
+      <w>1350</w>
+      <h>615</h>
+    </coordinates>
+    <panel_attributes>model</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>1020</y>
+      <w>175</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+-type: String
+--
++&lt;&lt;constructor&gt;&gt;
+    Customer(id: int, name: String, address: String, 
+    phone: String, email: String, type: String)
++getType(): String
++setType(type: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>670</y>
+      <w>155</w>
+      <h>215</h>
+    </coordinates>
+    <panel_attributes>Person
+--
+-id: int
+-name: String
+-address: String
+-zipCode: String
+-city: String
+-phone: String
+-email: String
+--
++&lt;&lt;constructor&gt;&gt;
+    Person(id: int, name: String, address: String, 
+    phone: String, email: String)
++getId(): int
++setId(id: int): void
++getName(): String
++setName(name: String): void
++getAddress(): String
++setAddress(address: String): void
++getZipCode(): String
++setZipCode(zipCode: String): void
++getCity(): String
++setCity(City: String): void
++getPhone(): String
++setPhone(phone: String): void
++getEmail(): String
++setEmail(email: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>880</y>
+      <w>15</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>605</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>430</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>SalesOrderDB
+--
+_-findAllQ: String_
+_-findByIdQ: String_
+-findAll: PreparedStatement
+-findById: PreparedStatement
+--
+-buildObject(rs: ResultSet): SalesOrder
+-buildObjects(rs: ResultSet): List&lt;SalesOrder&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>365</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+SalesOrderDBIF
+--
++findAll(): List&lt;SalesOrder&gt;
++findById(id: int): SalesOrder
++addSalesOrderToDatabase(salesOrder: SalesOrder): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>410</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>495</y>
+      <w>15</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>100</y>
+      <w>300</w>
+      <h>155</h>
+    </coordinates>
+    <panel_attributes>ProductCtrlIF
+--
+--
++createProduct(template: Product, productType: ProductType, model: String, description: String,
+					supplier: Supplier, dimensions: String, purchasePrice: double, salesPrice: double, 
+					fromDate: LocalDate)
++insertPartOfProduct(moduleId: int, productId: int): void
++insertProperties(properties: ArrayList&lt;Property&gt;, productId: int): void
++findAllSupplier(): ArrayList&lt;Supplier&gt;
++findAllProducts(): ArrayList&lt;Product&gt;
++findProductById(id: int): Product
++findProductByModel(model: String): Product
++createTemplateProperty(name: String, type: String): Property
++setProperty(property: Property, aValue: Object): void
++createProperty(name: String, type: String): Property
++addProductType(categoryName: String, type: String, templateProperties: ArrayList&lt;Property&gt;)
++findTemplateById(id: int): Product
++findAllCustomizableProducts(): ArrayList&lt;Product&gt;
++findAllNonCustomizableProducts(): ArrayList&lt;Product&gt;
++findAllProductTypes(): ArrayList&lt;ProductType&gt;  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>625</x>
+      <y>235</y>
+      <w>405</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>790.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1055</x>
+      <y>270</y>
+      <w>110</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>ProductCtrl
+--
+-productDB : ProductDBIF
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1105</x>
+      <y>250</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>365</y>
+      <w>205</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>ProductDBIF
+--
++findAll(): List&lt;Product&gt;
++findProductByModel(model: String): Product
++insertProduct(product: Product, prodcutType: ProductType): int
++insertTemplateProduct(product Product): int
++insertProductType(productType: ProductType): int
++insertPartOfProduct(moduleId: int, productId: int): void
++insertProductPrice(productPrice: ProductPrice): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1085</x>
+      <y>435</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1015</x>
+      <y>455</y>
+      <w>145</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>ProductDB
+--
+_-findAllQ: String_
+_-findByModelQ: String_
+-findAll: PreparedStatement
+-findByModel: PreparedStatement
+--
+-buildProductObject(rs: ResultSet): Product
+-buildProductObjects(rs: ResultSet): List&lt;Product&gt;
+-buildProductTypeObject(rs: ResultSet): ProductType
+-loadModules(product: Product): void
+-buildProductTypeObjects(rs: ResultSet): ArrayList&lt;ProductType&gt;
+-buildTemplateObject(rs: ResultSet): Product</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1105</x>
+      <y>515</y>
+      <w>15</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1105</x>
+      <y>300</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1030</x>
+      <y>675</y>
+      <w>175</w>
+      <h>275</h>
+    </coordinates>
+    <panel_attributes>Product
+--
+-id: int
+-model: String
+-description: String
+-dimensions: String
+- ProductPrice: productPrice
+- modules : LinkedList&lt;Product&gt;
+- properties: List&lt;Property&gt;
+- supplier: Supplier
+- productType: ProductType
+--
++&lt;&lt;constructor&gt;&gt;
+    Product()
++getId(): int
++setId(id: int): void
++getModel(): String
++setModel(model: String): void
++getDescription(): String
++setDescription(description: String): void
++getDimensions(): String
++setDimensions(dimensions: String): void
++getSupplier(): Supplier
++setSupplier(supplier: Supplier): void
++addModulesToProduct(product: Product): void
++removeModulesFromProduct(product: Product): void
++getProductPrice(): ProductPrice
++setProductPrice(productPrice: ProductPrice): void
++setProductSalesPrice(price: double): void
++getModules(): LinkedList&lt;Product&gt;
++addPropertyToProduct(property: Property): void
++getProperties(): ArrayList&lt;Property&gt;
++setProperties(properties: ArrayList&lt;Property&gt;): void
++getProductType(): ProductType
++setProductType(prodcutType: ProductType): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>705</x>
+      <y>895</y>
+      <w>155</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>ProductPrice
+--
+-id : int
+-purchasePrice: double
+-salesPrice: double
+-fromDate: LocalDate
+--
++&lt;&lt;constructor&gt;&gt;
+   ProductPrice(purchasePrice: double, 
+   salesPrice: double, fromDate: DateTime)
++getId(): int
++setId(id: int): void
++getPurchasePrice(): double
++setPurchasePrice(purchasePrice: double): void
++getSalesPrice(): double
++setSalesPrice(salesPrice: double): double
++getFromDate(): LocalDate
++setFromDate(fromDate: LocalDate): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>775</x>
+      <y>875</y>
+      <w>265</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>510.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>565</x>
+      <y>570</y>
+      <w>170</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>OrderConditionDB
+--
+insertOrderCondition(orderCondition: OrderCondition): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>515</y>
+      <w>110</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+OrderConditionDBIF
+--
++findById(id: int): OrderCondition</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>545</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>495</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>590</y>
+      <w>15</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>565</x>
+      <y>605</y>
+      <w>50</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>OrderTypeDB
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>605</y>
+      <w>50</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>OfferTypeDB
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>590</y>
+      <w>15</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>605</y>
+      <w>60</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>DeliveredTypeDB
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>695</x>
+      <y>590</y>
+      <w>15</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>50</y>
+      <w>15</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>325</x>
+      <y>20</y>
+      <w>55</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>LoginView
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>345</x>
+      <y>45</y>
+      <w>15</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>285</x>
+      <y>915</y>
+      <w>170</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>Employee
+--
+-ssn: String
+-salary: double
+-username: String
+-password: String
+--
++&lt;&lt;constructor&gt;&gt;
+    Employee(id: int, name: String, address: String, 
+    phone: String, email: String, ssn: String, 
+    salary: double, username: String, password: String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>880</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>885</x>
+      <y>990</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+DiscountIF
+--
++calculateDiscount(amount: String): double
++getDiscount: double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>935</x>
+      <y>1095</y>
+      <w>170</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>DiscountByAmount
+--
+-discount: double
+-product: Product
+--
++&lt;&lt;constructor&gt;&gt;
+	DiscountByAmount(amount: String, product: Product)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>915</x>
+      <y>1155</y>
+      <w>170</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>DiscountByProcent
+--
+-discount: double
+-product: Product
+--
++&lt;&lt;constructor&gt;&gt;
+	DiscountByAmount(amount: String, product: Product)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>1045</y>
+      <w>115</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>DiscountByTemplate
+--
+-discount: double
+--
++&lt;&lt;constructor&gt;&gt;
+	DiscountByAmount(amount: String)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>1030</y>
+      <w>25</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0;30.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>1030</y>
+      <w>25</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;30.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>1030</y>
+      <w>25</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0;30.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1230</x>
+      <y>885</y>
+      <w>145</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>PropertyFactory
+--
++&lt;&lt;constructor&gt;&gt;
+	PropertyFactory()
++createProperty(name: String, value: String, 
+                       type: String): Property
++createTemplateProperty(name: String, 
+                        type: String): Property	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1255</x>
+      <y>1185</y>
+      <w>145</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PropertyBoolean
+--
++&lt;&lt;constructor&gt;&gt;
+	PropertyBoolean(name: String, value: Object)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1225</x>
+      <y>975</y>
+      <w>155</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/Property/
+--
+-name: String
+-value: Object
+-type: Class
+--
++&lt;&lt;constructor&gt;&gt;
+	Property(name: String, value: Object)
++getName(): String
++setName(name: String): void
++getValue(): Object
++setValue(value: Object): void
+/+getType(): Class/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1105</y>
+      <w>145</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PropertyString
+--
++&lt;&lt;constructor&gt;&gt;
+	PropertySting(name: String, value: Object)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1270</x>
+      <y>1145</y>
+      <w>145</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PropertyDouble
+--
++&lt;&lt;constructor&gt;&gt;
+	PropertyDouble(name: String, value: Object)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>1080</y>
+      <w>35</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;50.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1265</x>
+      <y>1080</y>
+      <w>35</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;50.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1245</x>
+      <y>1080</y>
+      <w>35</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0;50.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>115</x>
+      <y>940</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Supplier
+--
+-cvr: String
+--
++&lt;&lt;constructor&gt;&gt;
+	Supplier(id: int, name: String, address: String, 
+    phone: String, email: String, cvr: String)
++getCvr(): String
++setCvr(cvr: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>695</x>
+      <y>730</y>
+      <w>155</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>ProductType
+--
+-id: int
+-templateId: int
+-categoryName: String
+-type: String
+--
++&lt;&lt;constructor&gt;&gt;
+	ProductType(categoryName: string, type: String)
++getId(): int
++setId(id: int): void
++getTemplateId(): int
++setTemplateId(templateId: int): void
++getCategoryName(): String
++setCategoryName(categoryName: String): void
++getType(): String
++setType(type: String): void	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>470</y>
+      <w>195</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>PersonDB
+--
+_-findAllCustomersQ: String_
+_-findCustomerByPhoneQ: String_
+_findCustomerByIdQ: String_
+_findAllEmployeesQ: String_
+_findEmployeesByPhoneQ: String_
+_findEmployeeByIdQ: String_
+_findAllSuppliersQ: String_
+_findSupplierByPhoneQ: String_
+_findSupplierByIdQ: String_
+-findAllCustomers: PreparedStatement
+-findCustomerByPhone: PreparedStatement
+--
+-buildPersonObject(rs: ResultSet): Person
+-buildCustomerObject(rs: ResultSet): Customer
+-buildCustomerObjects(rs: ResultSet): List&lt;Customer&gt;
+-buildEmployeeObject(rs: ResultSet): Employee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>370</y>
+      <w>130</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+SalesOrderLineDBIF
+--
++insertSalesOrderLine(orderId: int, 
+    salesOrderLine: SaleOrderLine): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1255</x>
+      <y>535</y>
+      <w>160</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PropertyDB
+--
+-buildObject(rs: ResultSet): Property
+-buildObjects(rs: ResultSet): ArrayList&lt;Property&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>725</x>
+      <y>445</y>
+      <w>105</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SalesOrderDB
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1230</x>
+      <y>455</y>
+      <w>205</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+PropertyDBIF
+--
++insertProperty(property: Property, productId: int): void
++insertTemplateProperty(property: Property, productId: int): void
++findPropertiesByProductId(productId: int): ArrayList&lt;Property&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1295</x>
+      <y>950</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>845</x>
+      <y>765</y>
+      <w>195</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>370.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>955</x>
+      <y>895</y>
+      <w>85</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1200</x>
+      <y>900</y>
+      <w>40</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>60.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1330</x>
+      <y>500</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>410</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>685</x>
+      <y>385</y>
+      <w>35</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;50.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1155</x>
+      <y>475</y>
+      <w>85</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1375</x>
+      <y>565</y>
+      <w>35</w>
+      <h>475</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;930.0;50.0;930.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>880</y>
+      <w>15</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>880</y>
+      <w>50</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>975</y>
+      <w>75</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;160.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>945</y>
+      <w>950</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;580.0;1880.0;580.0;1880.0;10.0</additional_attributes>
+  </element>
+</diagram>

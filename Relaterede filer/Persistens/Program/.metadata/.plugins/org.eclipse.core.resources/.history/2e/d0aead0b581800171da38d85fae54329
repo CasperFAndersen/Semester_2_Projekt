@@ -1,0 +1,27 @@
+package model;
+
+import java.time.LocalDate;
+
+public class SalesOrder {
+	private LocalDate date;
+	
+	public SalesOrder() {
+		
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+}

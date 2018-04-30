@@ -1,0 +1,9 @@
+1493811208455	Rename field 'txtPstnr'
+1493835557296	Rename field 'datoTxt'
+1493835571003	Rename field 'ordernrTxt'
+1493835608212	Rename field 'orderLineTbl'
+1493835633889	Rename local variable 'lblOrdrelinjer'
+1493968345198	Rename type 'Order'
+1493970655983	Delete element
+1493971229257	Rename type 'OfferDB'
+1493971239736	Rename package 'databse'

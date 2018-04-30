@@ -1,0 +1,14 @@
+package model;
+
+public class Supplier {
+	private String name;
+	private String address;
+	private String country;
+	private String phone;
+	private String email;
+	
+	public Supplier(String name, String address, String country, String phone, String email) {
+		setName(name);
+		setAddress(address);
+	}
+}

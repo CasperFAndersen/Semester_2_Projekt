@@ -1,0 +1,83 @@
+package mockups;
+
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.border.LineBorder;
+import java.awt.Font;
+import javax.swing.JLabel;
+
+public class CustomerPanel extends JPanel {
+	private JTextField txtName;
+	private JTextField txtPhone;
+	private JTextField txtEmail;
+	private JTextField txtAddress;
+	private JTextField txtCity;
+	private JTextField txtPostalCode;
+	private JLabel lblCity;
+	private JLabel lblPostalCode;
+
+	/**
+	 * Create the panel.
+	 */
+	public CustomerPanel() {
+		setLayout(null);
+		
+		txtName = new JTextField();
+		txtName.setColumns(10);
+		txtName.setBounds(105, 28, 146, 22);
+		add(txtName);
+		
+		txtPhone = new JTextField();
+		txtPhone.setColumns(10);
+		txtPhone.setBounds(105, 172, 146, 22);
+		add(txtPhone);
+		
+		txtEmail = new JTextField();
+		txtEmail.setColumns(10);
+		txtEmail.setBounds(105, 205, 146, 22);
+		add(txtEmail);
+		
+		txtAddress = new JTextField();
+		txtAddress.setColumns(10);
+		txtAddress.setBounds(105, 63, 146, 22);
+		add(txtAddress);
+		
+		JLabel lblAddress = new JLabel("Adresse:");
+		lblAddress.setBounds(36, 66, 56, 16);
+		add(lblAddress);
+		
+		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setBounds(36, 208, 56, 16);
+		add(lblEmail);
+		
+		JLabel lblPhone = new JLabel("Telefon:");
+		lblPhone.setBounds(36, 175, 56, 16);
+		add(lblPhone);
+		
+		JLabel lblName = new JLabel("Navn:");
+		lblName.setBounds(36, 31, 56, 16);
+		add(lblName);
+		
+		txtCity = new JTextField();
+		txtCity.setBounds(105, 98, 146, 22);
+		add(txtCity);
+		txtCity.setColumns(10);
+		
+		txtPostalCode = new JTextField();
+		txtPostalCode.setBounds(105, 133, 146, 22);
+		add(txtPostalCode);
+		txtPostalCode.setColumns(10);
+		
+		lblCity = new JLabel("By:");
+		lblCity.setBounds(36, 101, 56, 16);
+		add(lblCity);
+		
+		lblPostalCode = new JLabel("Postnr:");
+		lblPostalCode.setBounds(36, 136, 56, 16);
+		add(lblPostalCode);
+
+	}
+}

@@ -1,0 +1,8 @@
+package controller;
+
+import model.Order;
+
+public interface OrderCtrIF {
+
+	Order findOrderById(int id);
+}

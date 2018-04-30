@@ -1,0 +1,34 @@
+package model;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Property<Integer> prop = new IntegerProperty("amount", 7);
+		Property<Integer> prop3 = new IntegerProperty("dinmor", 20);
+		Property<String> prop1 = new StringProperty("hej", "23");
+		Property<Double> prop2 = new DoubleProperty("dobs", 4.44);
+		ArrayList<Property> al = new ArrayList<>();
+		
+		al.add(prop);
+		al.add(prop1);
+		al.add(prop2);
+		al.add(prop3);
+		
+		for(Property p : al){
+			System.out.println(p.getType());
+		}
+		
+		for(Property p : al){
+			if(p instanceof StringProperty){
+				System.out.println(p.getName() + p.getValue());
+			}
+		}
+		
+		
+		System.out.println(prop.getClass() + " " + prop1.getClass()+ " " + prop2.getClass());
+		//System.out.println(prop.getType());
+	}
+
+}

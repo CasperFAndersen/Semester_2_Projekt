@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="model.Person"/>
+<fullyQualifiedTypeName name="model.Offer"/>
+<fullyQualifiedTypeName name="model.Order"/>
+<fullyQualifiedTypeName name="model.Delivered"/>
+<fullyQualifiedTypeName name="java.lang.SafeVarargs"/>
+<fullyQualifiedTypeName name="model.Invoice"/>
+<fullyQualifiedTypeName name="model.SalesOrderLine"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="model.Product"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+<fullyQualifiedTypeName name="database.DBConnection"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="model.SalesOrder"/>
+<fullyQualifiedTypeName name="controller.CustomerCtrl"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="model.Discount"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="model.Employee"/>
+<fullyQualifiedTypeName name="model.Customer"/>
+<fullyQualifiedTypeName name="model.OrderCondition"/>
+<fullyQualifiedTypeName name="junit.extensions.TestSetup"/>
+<fullyQualifiedTypeName name="crocAir.Edge"/>
+</qualifiedTypeNameHistroy>

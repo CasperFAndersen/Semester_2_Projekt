@@ -1,0 +1,29 @@
+package model;
+
+public class GunReplica extends Product {
+	private String caliber;
+	private String material;
+		
+	public GunReplica(String name, double purchasePrice, double salesPrice, String countryOfOrigin, int minStock) {
+		super(name, purchasePrice, salesPrice, countryOfOrigin, minStock);
+		setCalibre(caliber);
+		setMaterial(material);
+	}
+
+	public String getCalibre() {
+		return caliber;
+	}
+
+	public void setCalibre(String calibre) {
+		this.caliber = calibre;
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+	
+}

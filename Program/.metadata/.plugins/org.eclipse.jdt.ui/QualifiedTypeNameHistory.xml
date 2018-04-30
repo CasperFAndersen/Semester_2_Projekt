@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="model.Product"/>
+<fullyQualifiedTypeName name="model.ProductType"/>
+<fullyQualifiedTypeName name="model.Properties"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Type"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="java.lang.reflect.GenericDeclaration"/>
+<fullyQualifiedTypeName name="java.lang.reflect.TypeVariable"/>
+<fullyQualifiedTypeName name="java.lang.reflect.ParameterizedType"/>
+<fullyQualifiedTypeName name="model.StringProperty"/>
+<fullyQualifiedTypeName name="model.DoubleProperty"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="model.Property"/>
+</qualifiedTypeNameHistroy>
